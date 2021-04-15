@@ -10,7 +10,7 @@ function displayfunction(){
 
 //processing
 function getURL(extension){
-    var apiUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+    var apiUrl = "https://api.funtranslations.com/translate/minion.json";
     var header = apiUrl+"?"+"text="+extension;
     console.log(header);
     return header;
