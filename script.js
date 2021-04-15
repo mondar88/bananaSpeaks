@@ -19,7 +19,7 @@ function getURL(extension){
 function outputis(urlHead){
     fetch(urlHead)
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => console.log(json.contents.translated))
 }
 
 
