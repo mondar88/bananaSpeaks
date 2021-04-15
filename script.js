@@ -4,13 +4,23 @@ var outputTxt = document.querySelector("#output");
 //input
 function displayfunction(){
     console.log("now it is clicked!");
-    console.log(inputTxt.value);
-    outputis();
+    var urlHead = getURL(inputTxt.value);
+    outputis(urlHead);
 }
 
+//processing
+function getURL(extension){
+    var header = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"+"?"+"text="+extension;
+    console.log(header);
+    return header;
 
+}
 //output
-function outputis(){
-    outputTxt.textContent = inputTxt.value;
+function outputis(urlHead){
+    fetch(urlHead)
+    .then(response => response.json())
+    .then(json => console.log(json))
 }
+
+
 buttonTranslate.addEventListener("click", displayfunction);
